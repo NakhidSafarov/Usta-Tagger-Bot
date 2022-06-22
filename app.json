@@ -1,0 +1,22 @@
+{
+  "name": "User Tagger Bot",
+  "logo":"https://te.legra.ph/file/c4ec940c039eb3fac3cb3.jpg",
+  "description": "User Tagger Bot qrupunuzdakı bütün userleri tag edə bilər.",
+  "env": {
+    "TOKEN": {
+      "description": "@botfather Vasitəsi ilə Ala Bilərsən",
+      "value": ""
+    },
+    "APP_ID": {
+      "description": " my.telegram.org Vasitəsi ilə Ala Bilərsən",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "my.telegram.org Vasitəsi ilə Ala Bilərsən",
+      "value": ""
+    }
+  },
+  "buildpacks": [{
+    "url": "https://github.com/heroku/heroku-buildpack-python.git"
+  }]
+}
