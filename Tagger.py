@@ -24,24 +24,24 @@ tekli_calisan = []
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("Salam 👋.Mən Usta Tagger Bot.\nSizin əvəzinizdən qruplarnızda istifadəçiləri tag edə bilərəm.Haqqımda daha ətraflı məlumat əldə etmək üçün /help əmrinə toxunun.",
+  await event.reply("Salam 👋.Mən Usta Tagger Bot.\n\nSizin əvəzinizdən qruplarnızda istifadəçiləri tag edə bilərəm.Haqqımda daha ətraflı məlumat əldə etmək üçün /help əmrinə toxunun.",
                     buttons=(
                    
 		      [Button.url('➕ Məni Qrupa Sal ➕', 'https://t.me/Ustataggerbot?startgroup=a')],
                       [Button.url('Developer 👨🏻‍💻', 'https://t.me/NakhidUsta')],
-                      [Button.url(' Qurup 📣', 'https://t.me/USTABOTLAR')], 
+                      [Button.url(' Qurup 📣', 'https://t.me/Ustasohbet')], 
 		      [Button.url(' Kanal 🛠️', 'https://t.me/USTABOTLAR')],
                     ),
                     link_preview=False
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Usta Tagger Bot'un Kömək Menyusu.**\nƏmrlər📕.\n/all <səbəb> - 5-li Tag Edəcəkdir. \n/admins <səbəb> - Yalnız Adminləri Tag Edəcəkdir. \n/tektag <səbəb> - Tək-tək Tag Edəcəkdir.\n/etag <səbəb> - Emojilərlə Tag Edəcəkdir."
+  helptext = "**Usta Tagger Bot'un Kömək Menyusu.**\nƏmrlər📕.\n/all <səbəb> - 5-li Tag Edəcəkdir. \n/tektag <səbəb> - Tək-tək Tag Edəcəkdir. "
   await event.reply(helptext,
                     buttons=(
                       [Button.url('➕ Məni Qrupa Sal ➕', 'https://t.me/Ustataggerbot?startgroup=a')],
                       [Button.url('Developer 👨🏻‍💻', 'https://t.me/NakhidUsta')],
-                      [Button.url(' Qurup 📣', 'https://t.me/USTABOTLAR')], 
+                      [Button.url(' Qurup 📣', 'https://t.me/Ustasohbet')], 
 		      [Button.url(' Kanal 🛠️', 'https://t.me/USTABOTLAR')],
                     ),
                     link_preview=False
@@ -256,10 +256,10 @@ async def cancel(event):
 
   
 
-@client.on(events.NewMessage(pattern="^/tagadmin ?(.*)"))
-async def mentionall(event):
+#@client.on(events.NewMessage(pattern="^/tagadmin ?(.*)"))
+#async def mentionall(event):
 
-        if tagadmin.pattern_match.group(1):
+       if tagadmin.pattern_match.group(1):
                seasons = tagadmin.pattern_match.group(1)
         else:
                seasons = ""
