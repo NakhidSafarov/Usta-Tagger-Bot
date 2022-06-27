@@ -24,8 +24,7 @@ tekli_calisan = []
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("Salam🖐.Mən Usta Tagger Bot.\n🤖Sizin əvəzinizdən qruplarnızda istifadəçiləri tag edə bilərəm.
-🤖Haqqımda daha ətraflı məlumat əldə etmək üçün /help əmrinə toxunun.",
+  await event.reply("Salam🖐.Mən Usta Tagger Bot.\n 🤖Sizin əvəzinizdən qruplarnızda istifadəçiləri tag edə bilərəm.🤖Haqqımda daha ətraflı məlumat əldə etmək üçün /help əmrinə toxunun.",
                     buttons=(
                    
 		      [Button.url('➕ Məni Qrupa Sal ➕', 'https://t.me/Ustataggerbot?startgroup=a')],
