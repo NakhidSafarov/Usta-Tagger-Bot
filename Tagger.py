@@ -24,7 +24,8 @@ tekli_calisan = []
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("Salam 👋.Mən Usta Tagger Bot.\n\nSizin əvəzinizdən qruplarnızda istifadəçiləri tag edə bilərəm.Haqqımda daha ətraflı məlumat əldə etmək üçün /help əmrinə toxunun.",
+  await event.reply("Salam🖐.Mən Usta Tagger Bot.\n🤖Sizin əvəzinizdən qruplarnızda istifadəçiləri tag edə bilərəm.
+🤖Haqqımda daha ətraflı məlumat əldə etmək üçün /help əmrinə toxunun.",
                     buttons=(
                    
 		      [Button.url('➕ Məni Qrupa Sal ➕', 'https://t.me/Ustataggerbot?startgroup=a')],
@@ -36,7 +37,7 @@ async def start(event):
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Usta Tagger Bot'un Kömək Menyusu.**\nƏmrlər📕.\n/all <səbəb> - 5-li Tag Edəcəkdir. \n/tektag <səbəb> - Tək-tək Tag Edəcəkdir. "
+  helptext = "**Usta Tagger Bot'un Kömək Menyusu.📌**\n/all <səbəb> - 5-li Tag Edəcəkdir. \n/tektag <səbəb> - Tək-tək Tag Edəcəkdir. \n/etag <səbəb> - Emojilərlə Tag Edəcəkdir.\n/admins <səbəb> - Yalnız Adminləri Tag Edəcəkdir."
   await event.reply(helptext,
                     buttons=(
                       [Button.url('➕ Məni Qrupa Sal ➕', 'https://t.me/Ustataggerbot?startgroup=a')],
@@ -254,23 +255,23 @@ async def cancel(event):
   tekli_calisan.remove(event.chat_id)
 	
 
- @client.on(events.NewMessage(pattern="^/tagadmin ?(.*)"))
-async def mentionall(event):
+@client.on(events.NewMessage(pattern="^/admins ?(.*)"))
+async def mentionall(tagadmin):
 
-       if tagadmin.pattern_match.group(1):
-               seasons = tagadmin.pattern_match.group(1)
-        else:
-               seasons = ""
+	if tagadmin.pattern_match.group(1):
+		seasons = tagadmin.pattern_match.group(1)
+	else:
+		seasons = ""
 
-        chat = await tagadmin.get_input_chat()
-        a_=0
-        await tagadmin.delete()
-        async for i in client.iter_participants(chat, filter=cp):
-                if a_ == 500:
-                        break
-                a_+=5
-                await tagadmin.client.send_message(tagadmin.chat_id, "{} {}".format(i.first_name, i.id, seasons))
-                sleep(0.5)
+	chat = await tagadmin.get_input_chat()
+	a_=0
+	await tagadmin.delete()
+	async for i in client.iter_participants(chat, filter=cp):
+		if a_ == 500:
+			break
+		a_+=5
+		await tagadmin.client.send_message(tagadmin.chat_id, "{} {}".format(i.first_name, i.id, seasons))
+		sleep(0.5)
 
 
 print(">> Bot işləyir narahat olma 🚀 məlumat almaq üçün @ThrHassan yazın <<")
